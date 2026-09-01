@@ -58,7 +58,7 @@ jobs:
       - name: Run tests
         run: pipenv run test
 
-build:
+  build:
     needs: [lint, test]
     runs-on: ubuntu-latest
     defaults:
@@ -79,4 +79,4 @@ build:
           pipenv lock
 
       - name: Build Docker Image
-        run: docker build --tag mp-backend:latest ..
+        run: docker build --tag mp-backend:latest .
